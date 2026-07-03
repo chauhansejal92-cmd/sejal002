@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Sejal | Web Designer & Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:radial-gradient(circle at top,#0f172a,#020617 65%,#000);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* GLOW */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#38bdf8;
+    filter:blur(220px);
+    top:-120px;
+    left:-120px;
+    opacity:0.25;
+    z-index:-1;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:rgba(15,23,42,0.7);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:#cbd5e1;
+    text-decoration:none;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:#38bdf8;
+    transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#38bdf8;
+}
+
+nav a:hover::after,
+nav a.active::after{
+    width:100%;
+}
+
+/* MOBILE MENU */
+
+.menu-btn{
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 8% 60px;
+}
+
+.hero-content{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    align-items:center;
+    gap:60px;
+}
+
+.hero-text h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+    font-size:1.1rem;
+}
+
+.hero-text h1{
+    font-size:4rem;
+    line-height:1.2;
+    margin-bottom:15px;
+}
+
+.hero-text span{
+    color:#38bdf8;
+}
+
+.hero-text p{
+    color:#94a3b8;
+    line-height:1.8;
+    margin-bottom:28px;
+    max-width:550px;
+}
+
+.hero-btns{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 32px;
+    border:none;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.primary-btn{
+    background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+    color:#000;
+}
+
+.secondary-btn{
+    border:1px solid rgba(56,189,248,0.4);
+    color:#38bdf8;
+    background:transparent;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:330px;
+    height:330px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid rgba(56,189,248,0.6);
+    box-shadow:0 0 50px rgba(56,189,248,0.35);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* SECTION */
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.7rem;
+    color:#38bdf8;
+}
+
+.section-title p{
+    margin-top:10px;
+    color:#94a3b8;
+}
+/* ABOUT LAYOUT FIX */
+.about-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+    align-items:center;
+}
+
+/* COMMON BOX */
+.about-box{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(56,189,248,0.15);
+    padding:30px;
+    border-radius:18px;
+    backdrop-filter:blur(12px);
+    transition:0.4s;
+}
+
+.about-box:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+}
+
+/* IMAGE */
+.about-image-box{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.about-image-box img{
+    width:240px;
+    height:240px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(56,189,248,0.25);
+    transition:0.4s;
+}
+
+.about-image-box img:hover{
+    transform:scale(1.05);
+}
+
+/* TEXT CLEANING */
+.about-text-box h3{
+    color:#38bdf8;
+    margin-bottom:12px;
+    font-size:1.5rem;
+}
+
+.about-text-box p{
+    color:#cbd5e1;
+    line-height:1.7;
+    margin-bottom:12px;
+}
+
+/* INTRO LINE */
+.intro-text{
+    color:#38bdf8;
+    font-weight:600;
+    margin-bottom:10px;
+    letter-spacing:1px;
+}
+/* SKILLS */
+
+.skills-wrapper{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:28px;
+}
+
+.skill-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(56,189,248,0.15);
+    padding:28px;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    border-color:#38bdf8;
+    box-shadow:0 10px 35px rgba(56,189,248,0.25);
+}
+
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:18px;
+}
+
+.skill-bar{
+    width:100%;
+    height:12px;
+    background:rgba(255,255,255,0.08);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.skill-progress{
+    height:100%;
+    border-radius:20px;
+    animation:loadBar 2s ease;
+}
+
+.html{
+    width:95%;
+    background:#ff4d4d;
+}
+
+.css{
+    width:90%;
+    background:#38bdf8;
+}
+
+.js{
+    width:80%;
+    background:#facc15;
+}
+
+.php{
+    width:75%;
+    background:#8b5cf6;
+}
+
+.responsive{
+    width:92%;
+    background:#10b981;
+}
+
+.web{
+    width:88%;
+    background:#ec4899;
+}
+
+@keyframes loadBar{
+    from{
+        width:0;
+    }
+}
+
+/* PROJECTS */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:28px;
+}
+
+.project-card{
+    background:rgba(255,255,255,0.05);
+    border-radius:18px;
+    overflow:hidden;
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(56,189,248,0.25);
+}
+
+.project-img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:24px;
+}
+
+.project-content h3{
+    color:#38bdf8;
+    margin-bottom:12px;
+}
+
+.project-content p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+/* CONTACT */
+
+.contact-container{
+    max-width:700px;
+    margin:auto;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+input,
+textarea{
+    padding:16px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.1);
+    background:rgba(255,255,255,0.04);
+    color:#fff;
+    outline:none;
+}
+
+textarea{
+    height:160px;
+    resize:none;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#38bdf8;
+}
+
+/* FOOTER */
+
+footer{
+    background:#020617;
+    text-align:center;
+    padding:28px;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.06);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    header{
+        padding:16px 5%;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav{
+        position:absolute;
+        top:80px;
+        right:-100%;
+        flex-direction:column;
+        background:#0f172a;
+        width:220px;
+        padding:20px;
+        border-radius:12px;
+        transition:0.4s;
+    }
+
+    nav.active{
+        right:5%;
+    }
+
+    .hero-text h1{
+        font-size:2.7rem;
+    }
+
+    .hero-image img{
+        width:260px;
+        height:260px;
+    }
+
+    section{
+        padding:80px 5%;
+    }
+    
+
+}
+
+/* CONTACT SECTION */
+
+.contact-box-main,
+#contact h2{
+    font-size:1.6rem;
+    color:#38bdf8;
+    text-align:center;
+    margin-bottom:5px;
+}
+.resume-box{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(56,189,248,0.15);
+    border-radius:18px;
+    backdrop-filter:blur(12px);
+    transition:0.4s;
+}
+
+.contact-box-main:hover,
+.resume-box:hover{
+    border-color:#38bdf8;
+    box-shadow:0 10px 35px rgba(56,189,248,0.20);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:30px;
+    margin-top:40px;
+}
+
+.contact-info-box{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(56,189,248,0.15);
+    padding:22px;
+    border-radius:18px;
+    margin-bottom:18px;
+    transition:0.4s;
+}
+
+.contact-info-box:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+    box-shadow:0 10px 35px rgba(56,189,248,0.25);
+}
+
+.contact-info-box h6,
+.contact-info-box h4{
+    color:#38bdf8;
+    margin-bottom:10px;
+    font-size:1rem;
+}
+
+.contact-info-box a,
+.contact-info-box span{
+    color:#e2e8f0;
+    text-decoration:none;
+}
+
+.contact-form-custom{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(56,189,248,0.15);
+    padding:30px;
+    border-radius:18px;
+    transition:0.4s;
+}
+
+.contact-form-custom:hover{
+    border-color:#38bdf8;
+}
+
+.contact-form-custom input,
+.contact-form-custom textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.1);
+    background:rgba(255,255,255,0.04);
+    color:#fff;
+}
+
+.contact-form-custom input:focus,
+.contact-form-custom textarea:focus{
+    border-color:#38bdf8;
+    box-shadow:0 0 10px rgba(56,189,248,0.3);
+}
+
+.contact-form-custom input::placeholder,
+.contact-form-custom textarea::placeholder{
+    color:#94a3b8;
+}
+
+.send-btn-custom,
+.resume-btn{
+    background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+    color:#000;
+    font-weight:600;
+    border:none;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.send-btn-custom:hover,
+.resume-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(56,189,248,0.35);
+}
+
+.social-btn-custom{
+    width:100%;
+    display:block;
+    text-align:center;
+    margin-bottom:12px;
+    border-radius:12px;
+    padding:14px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.social-btn-custom:hover{
+    transform:translateY(-4px);
+}
+
+.resume-box{
+    text-align:center;
+}
+
+@media(max-width:768px){
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-box-main,
+    .resume-box{
+        padding:25px;
+    }
+}
+.about-image-box img{
+    width:400px;      
+    height:300px;     
+    object-fit:cover;
+    border-radius:18px;
+    transition:0.5s ease;
+    size: cover;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">Sejal.</div>
+
+<div class="menu-btn" id="menuBtn">☰</div>
+
+<nav id="navbar">
+<a href="#home" class="active">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<h3>Welcome To My Portfolio</h3>
+
+<h1>
+Hi, I'm <span>Sejal</span><br>
+Web Designer & Developer
+</h1>
+
+<p>
+I create modern, responsive and fully functional websites using
+HTML, CSS, JavaScript and PHP.
+I love building clean and interactive web experiences.
+</p>
+
+<div class="hero-btns">
+
+<a href="#contact" class="btn primary-btn">
+Hire Me
+</a>
+
+<a href="#projects" class="btn secondary-btn">
+View Projects
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+<img src="sejal.jpg" >
+
+</div>
+
+</div>
+
+</section>
+<!-- ABOUT -->
+<section id="about">
+
+<div class="section-title">
+    <h2>About Me</h2>
+</div>
+
+<div class="about-container">
+
+    <!-- IMAGE BOX -->
+    <div class="about-box about-image-box">
+        <img src="IMG (2).jpg" alt="About Me Image">
+    </div>
+
+    <!-- TEXT BOX -->
+    <div class="about-box about-text-box">
+
+        <p class="intro-text">LET ME INTRODUCE MYSELF:</p>
+
+        <h3>About Me</h3>
+
+        <p>
+            A story of hard work and perseverance.
+        </p>
+
+        <p>
+            Hi, I'm Sejal, an aspiring Full Stack Web Developer. I build modern,
+            responsive and user-friendly websites and also work on backend
+            development using PHP.
+        </p>
+
+        <p>
+            I am continuously learning, practicing, and building real-world projects
+            to improve my skills and grow in the field of web development.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="section-title">
+<h2>My Skills</h2>
+<p>Technologies & Tools I Use</p>
+</div>
+
+<div class="skills-wrapper">
+
+<div class="skill-card">
+<div class="skill-top">
+<h3>HTML</h3>
+<span>95%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-progress html"></div>
+</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-top">
+<h3>CSS</h3>
+<span>90%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-progress css"></div>
+</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-top">
+<h3>JavaScript</h3>
+<span>80%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-progress js"></div>
+</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-top">
+<h3>PHP</h3>
+<span>75%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-progress php"></div>
+</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-top">
+<h3>MySQL   </h3>
+<span>70%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-progress php"></div>
+</div>
+</div>
+
+
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="section-title">
+<h2>Projects</h2>
+<p>Some Of My Recent Work</p>
+</div>
+
+<div class="projects-grid">
+
+<div class="project-card">
+
+<img class="project-img"
+src="sejall.jpg">
+
+<div class="project-content">
+<h3>Portfolio Website</h3>
+<p>
+I specialize in building responsive and user-friendly websites that help businesses grow online and create strong digital presence.
+</p>
+<a href="https://chauhansejal92-cmd.github.io/sejalnewpage/"
+   target="_blank"
+   class="btn primary-btn">
+   Live Demo
+</a>
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img class="project-img"
+src="tour.jpg">
+
+<div class="project-content">
+<h3>Tour and Travel </h3>
+<p>
+    
+
+    Explore the World with Us
+Discover breathtaking destinations and unforgettable experiences.Your Journey Begins Here
+Travel the world with comfort, safety, and joy.We are a trusted travel agency helping people explore beautiful destinations around the world.
+From mountains to beaches, we create memorable travel experiences for every traveler.
+</p>
+<a href="https://your-tour-website-link.com"
+   target="_blank"
+   class="btn primary-btn">
+   Live Demo
+</a>
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img class="project-img"
+src="blog.jpg">
+
+<div class="project-content">
+<h3>Blog website</h3>
+<p>
+Welcome to my blog where I share ideas, tutorials, and tips about web development, design, and technology in a simple way.
+    
+</p>
+<a href="https://chauhansejal92-cmd.github.io/blog/"
+   target="_blank"
+   class="btn primary-btn">
+   Live Demo
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+ <section id="contact" class="container mt-5 rounded p-4 contact-box-main" data-aos="fade-up">
+
+            <h2 class="text-center mt-4 text-white">Contact Me</h2>
+
+            <p class="text-center text-secondary mb-4">
+                I’m open to job opportunities, freelance work, and collaborations.
+            </p>
+
+            <div class="row g-4">
+
+                <!-- LEFT SIDE (CONTACT INFO) -->
+                <div class="col-md-4">
+
+                    <div class="p-3 rounded-4 mb-3 contact-info-box">
+                        <h6 class="text-white">📧 Email</h6>
+                        <a href="mailto:chauhansejal92@gmail.com" class="text-decoration-none text-light">
+                            chauhansejal92@gmail.com
+                        </a>
+                    </div>
+
+                    <div class="p-3 rounded-4 mb-3 contact-info-box">
+                        <h6 class="text-white">📱 Phone</h6>
+                        <a href="tel:+7876766568" class="text-decoration-none text-light">
+                            +91 7876766568
+                        </a>
+                    </div>
+
+                    <div class="p-3 rounded-4 mb-3 contact-info-box">
+                        <h6 class="text-white">📍 Location</h6>
+                        <span class="text-light"> Location: Delhi/india
+1st Floor, Plot No. 18-19, KH. No. 630/1,
+ Numberdar Colony, Opp. North End Public School, Burari, PIN - 110084</span>
+                    </div>
+
+                    <!-- SOCIAL BUTTONS -->
+                    <div class="mt-3">
+                        <a href="https://www.linkedin.com/in/sejal-chauhan-633213414?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"
+                            class="btn btn-primary w-100 mb-2 social-btn-custom">LinkedIn</a>
+
+                        <!-- WHATSAPP BUTTON -->
+                        <a href="https://wa.me/7876766568" target="_blank"
+                            class="btn btn-success w-100 social-btn-custom">WhatsApp</a>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDE (FORM - YOUR ORIGINAL) -->
+                <div class="col-md-8">
+
+                    <form action="https://formsubmit.co/chauhansejal92@gmail.com" method="POST"
+                        class="p-5 rounded-4 shadow-lg contact-form-custom">
+
+                        <div class="row g-4">
+
+                            <!-- Name + Email -->
+                            <div class="col-md-6">
+                                <input type="text" name="name" class="form-control mb-4" placeholder="Your Name"
+                                    required>
+
+                                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+
+                            <!-- Subject + Message -->
+                            <div class="col-md-6">
+                                <input type="text" name="subject" class="form-control mb-4" placeholder="Subject"
+                                    required>
+
+                                <textarea name="message" class="form-control" rows="4" placeholder="Your Message"
+                                    required></textarea>
+                            </div>
+
+                        </div>
+
+                        <!-- Hidden inputs (IMPORTANT - same as yours) -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next"
+                            value="">
+
+                        <button type="submit" class="btn btn-danger w-100 mt-5 send-btn-custom">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </section>
+
+<section id="resume" class="container mt-5 rounded p-4 resume-box">
+    <h2 class="text-center text-white mt-4 mb-4">
+        My Resume
+    </h2>
+
+    <p class="text-center text-light mb-4">
+        You can download my resume in PDF format by clicking the button below.
+    </p>
+
+    <div class="text-center">
+        <a href="Sejal_Resume01.pdf" download class="btn btn-danger px-5 py-2 resume-btn">
+            📄 Download Resume
+        </a>
+    </div>
+</section>
+        
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© <span id="year"></span> Sejal | Web Designer & Developer
+</footer>
+
+<script>
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const navbar = document.getElementById("navbar");
+
+menuBtn.onclick = () => {
+    navbar.classList.toggle("active");
+};
+
+/* CONTACT FORM */
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    alert("Message Sent Successfully!");
+
+    this.reset();
+
+});
+
+/* ACTIVE NAVBAR */
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+
+        if(pageYOffset >= sectionTop){
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
+/* FOOTER YEAR */
+
+document.getElementById("year").innerHTML =
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
